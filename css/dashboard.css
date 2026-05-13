@@ -1,0 +1,75 @@
+:root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --border: #1f1f2e;
+    --text: #e4e4eb;
+    --text-muted: #8888a0;
+    --success: #22c55e;
+    --failure: #ef4444;
+    --pending: #eab308;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 2rem; border-bottom: 1px solid var(--border);
+}
+
+h1 { font-size: 1.5rem; }
+
+.header-stats { display: flex; gap: 2rem; align-items: center; font-size: 0.9rem; }
+button {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); padding: 0.5rem 1rem; border-radius: 6px;
+    cursor: pointer;
+}
+button:hover { border-color: var(--text-muted); }
+
+.summary {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; padding: 2rem; max-width: 800px; margin: 0 auto;
+}
+
+.stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem; text-align: center;
+}
+.stat-card h3 { font-size: 2.5rem; }
+.stat-card.success h3 { color: var(--success); }
+.stat-card.failure h3 { color: var(--failure); }
+.stat-card.pending h3 { color: var(--pending); }
+
+.repos-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem; padding: 0 2rem 2rem;
+}
+
+.repo-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1rem;
+}
+.repo-card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 0.75rem;
+}
+.repo-name { font-weight: 600; font-size: 0.95rem; }
+.repo-name a { color: var(--text); text-decoration: none; }
+.repo-name a:hover { color: #6366f1; }
+.status-badge {
+    font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 999px;
+    font-weight: 500;
+}
+.status-badge.pass { background: rgba(34,197,94,0.15); color: var(--success); }
+.status-badge.fail { background: rgba(239,68,68,0.15); color: var(--failure); }
+.status-badge.pending { background: rgba(234,179,8,0.15); color: var(--pending); }
+.status-badge.none { background: rgba(136,136,160,0.15); color: var(--text-muted); }
+.repo-meta { font-size: 0.8rem; color: var(--text-muted); }
+.repo-tests { margin-top: 0.5rem; font-size: 0.8rem; }
+
+footer {
+    text-align: center; padding: 1.5rem; color: var(--text-muted);
+    font-size: 0.85rem; border-top: 1px solid var(--border);
+}

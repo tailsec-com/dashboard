@@ -1,0 +1,15 @@
+name: Update Dashboard
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update dashboard data
+        run: |
+          echo "Dashboard refresh triggered at $(date)"
+          curl -s "https://api.github.com/repos/tailsec-com/scan-code/commits/main/status" > data/scan-code.json 2>/dev/null || echo "{}" > data/scan-code.json

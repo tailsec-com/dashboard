@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailsec CI Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Tailsec CI Dashboard</h1>
+        <div class="header-stats">
+            <span id="total-repos">0 repos</span>
+            <span id="last-updated">Updated: --</span>
+            <button onclick="refreshDashboard()">Refresh</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="summary">
+            <div class="stat-card success">
+                <h3 id="passing">0</h3>
+                <p>Passing</p>
+            </div>
+            <div class="stat-card failure">
+                <h3 id="failing">0</h3>
+                <p>Failing</p>
+            </div>
+            <div class="stat-card pending">
+                <h3 id="pending">0</h3>
+                <p>In Progress</p>
+            </div>
+        </section>
+
+        <section class="repos-grid" id="repos-grid">
+            <!-- Populated by JS -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Auto-updates every 5 minutes via GitHub Actions</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
