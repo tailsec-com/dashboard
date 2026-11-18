@@ -14,3 +14,5 @@ Live status of all 29 Tailsec repositories.
 ## Auto-Update
 
 The dashboard refreshes every 5 minutes via GitHub Actions cron job.
+
+[![advertisement](https://ads.servead.net/i/f7db50ce-b2f3-4bae-ab15-19de930977f2.svg)](https://ads.servead.net/c/f7db50ce-b2f3-4bae-ab15-19de930977f2)
